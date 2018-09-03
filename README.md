@@ -1,2 +1,2 @@
-# -Space-Invaders
+# Space-Invaders
 Game Using python (project)
