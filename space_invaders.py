@@ -35,6 +35,8 @@ border_pen.hideturtle()
 #set score to 0
 score = 0
 
+
+
 #draw the score
 score_pen = turtle.Turtle()
 score_pen.speed(0)
@@ -70,11 +72,11 @@ for i in range(number_of_enemies):
 for enemy in enemies:	
 	enemy.color("green")
 	enemy.shape("sp_enemy.gif")
-	enemy.shapesize(10,10,5)
+	# enemy.shapesize(10,10,5)
 	enemy.penup()
 	enemy.speed(0)
 	x = random.randint(-180, 180)
-	y = random.randint(100, 230)
+	y = random.randint(220, 230)
 	enemy.setposition(x, y)
 
 enemyspeed = 1
@@ -184,8 +186,18 @@ while True:
 		if isCollision(player, enemy):
 			player.hideturtle()
 			enemy.hideturtle()
-			print("Game Over!!")
-			break
+			#Write Game over
+			s_pen = turtle.Turtle()
+			s_pen.speed(0)
+			s_pen.color("white")
+			s_pen.penup()
+			s_pen.setposition(0,0)
+			sstring = "Game Over!!!!!"
+			s_pen.write(sstring, False, align="center", font=("Arial", 35, "bold"))
+			s_pen.hideturtle()
+			#End Game
+			turtle.done()
+			
 		
 	#move laser	
 	if laserstate == "fire":
